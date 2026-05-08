@@ -1,0 +1,23 @@
+app:
+  name: localiza_taxi_pipeline
+  timezone: UTC
+
+sources:
+  months:
+    - "2026-01"
+    - "2026-02"
+    - "2026-03"
+  green_taxi_url_template: "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_{month}.parquet"
+  taxi_zone_lookup_url: "https://d37ci6vzurychx.cloudfront.net/misc/taxi_zone_lookup.csv"
+
+paths:
+  landing_green_taxi: "data/landing/green_taxi"
+  landing_taxi_zone_lookup: "data/landing/taxi_zone_lookup"
+  bronze_green_taxi: "data/bronze/green_taxi_trips"
+  bronze_taxi_zone_lookup: "data/bronze/taxi_zone_lookup"
+  audit_ingestion_counts: "data/audit/ingestion_counts"
+  silver_green_taxi_valid: "data/silver/green_taxi_trips_valid"
+  silver_green_taxi_invalid: "data/silver/green_taxi_trips_invalid"
+  gold_revenue_by_pickup_zone: "data/gold/revenue_by_pickup_zone"
+  gold_top_expensive_trips: "data/gold/top_expensive_trips"
+  gold_avg_tip_by_dropoff_borough: "data/gold/avg_tip_by_dropoff_borough"

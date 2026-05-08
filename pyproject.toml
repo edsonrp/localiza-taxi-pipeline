@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "localiza-taxi-pipeline"
+version = "0.1.0"
+description = "PySpark local pipeline for NYC Green Taxi data engineering challenge"
+readme = "README.md"
+requires-python = ">=3.10,<3.12"
+authors = [{ name = "Edson Rodrigues Pereira" }]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
